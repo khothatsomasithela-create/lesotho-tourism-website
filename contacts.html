@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking at Lesotho Destinations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="brand" href="index.html">
+      <img src="logo.jpg" alt="Lesotho Tours logo"> LESOTHO
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contacts.html" class="active">Contacts</a></li>
+      </ul>
+      <button id="themeBtn" type="button">Dark mode</button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Booking and Contact</h1>
+  </header>
+
+  <main>
+    <div class="cols">
+
+      <div class="c7">
+        <section class="box">
+          <h2>Booking form</h2>
+
+      <div id="bookSuccess" class="alert alert-success d-none"></div>
+
+      <form id="bookForm" novalidate>
+
+        <div class="mb-3">
+          <label for="bName" class="form-label">Full name</label>
+          <input type="text" class="form-control" id="bName" placeholder="Enter your full name" required>
+          <span class="error" id="bNameError"></span>
+        </div>
+
+        <div class="mb-3">
+          <label for="bEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="bEmail" placeholder="name@gmail.com" required>
+          <span class="error" id="bEmailError"></span>
+        </div>
+
+        <div class="mb-3">
+          <label for="bPhone" class="form-label">Phone number</label>
+          <input type="tel" class="form-control" id="bPhone" required>
+          <span class="error" id="bPhoneError"></span>
+        </div>
+
+        <div class="mb-3">
+          <label for="bDate" class="form-label">Arrival date</label>
+          <input type="date" class="form-control" id="bDate" required>
+          <span class="error" id="bDateError"></span>
+        </div>
+
+        <div class="mb-3">
+          <label for="activity" class="form-label">Activity</label>
+          <select class="form-select" id="activity" required>
+            <option value="">Choose an activity...</option>
+            <option value="150">Hiking and nature walks - M150 per person</option>
+            <option value="350">Pony trekking - M350 per person</option>
+            <option value="120">Sightseeing - M120 per person</option>
+            <option value="600">Skiing and snowboarding - M600 per person</option>
+            <option value="200">Cultural food - M200 per person</option>
+            <option value="180">Cultural activities - M180 per person</option>
+          </select>
+          <span class="error" id="activityError"></span>
+      </div>
+
+        <div class="mb-3">
+          <label for="stay" class="form-label">Accommodation</label>
+          <select class="form-select" id="stay">
+            <option value="0">No accommodation (day visit)</option>
+            <option value="250">Dormitory or camping - M250 per person per night</option>
+            <option value="650">Standard room - M650 per person per night</option>
+            <option value="1200">Self-catering house or chalet - M1,200 per person per night</option>
+          </select>
+        </div>
+
+        <div class="two">
+          <div class="half mb-3">
+            <label for="guests" class="form-label">Number of people</label>
+            <input type="number" class="form-control" id="guests" min="1" max="30" value="1" required>
+            <span class="error" id="guestsError"></span>
+        </div>
+          <div class="half mb-3">
+            <label for="nights" class="form-label">Nights</label>
+            <input type="number" class="form-control" id="nights" min="0" max="30" value="0">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="bNotes" class="form-label">Additional information (optional)</label>
+          <textarea class="form-control" id="bNotes" rows="2" placeholder="Special requests, food needs..."></textarea>
+       </div>
+
+        <button type="submit" class="btn btn-dark">Submit booking</button>
+        <button type="reset" class="btn btn-secondary">Clear</button>
+      </form>
+    </section>
+    </div>
+
+    <div class="c5">
+
+    <aside class="box calc-box mb-4">
+      <h2>Cost calculator</h2>
+      <p>The total changes as you fill in the booking form.</p>
+      <table>
+        <tr>
+          <td>Activity</td>
+          <td class="right" id="costActivity">M 0.00</td>
+        </tr>
+
+        <tr>
+          <td>Accommodation</td>
+          <td class="right" id="costStay">M 0.00</td>
+        </tr>
+
+        <tr class="total">
+          <td>Total</td>
+          <td class="right" id="costTotal">M 0.00</td>
+        </tr>
+      </table>
+    </aside>
+
+    <section class="box">
+      <h2>Send us a message</h2>
+
+      <div id="messageSuccess" class="alert alert-success d-none"></div>
+
+      <form id="contactForm" novalidate>
+
+        <div class="mb-3">
+          <label for="cName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="cName" required>
+          <span class="error" id="cNameError"></span>
+      </div>
+
+        <div class="mb-3">
+          <label for="cEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="cEmail" required>
+          <span class="error" id="cEmailError"></span>
+        </div>
+
+        <div class="mb-3">
+          <label for="cSubject" class="form-label">Subject</label>
+          <input type="text" class="form-control" id="cSubject" required>
+          <span class="error" id="cSubjectError"></span>
+        </div>
+
+        <div class="mb-3">
+          <label for="cMessage" class="form-label">Message</label>
+          <textarea class="form-control" id="cMessage" rows="3" required></textarea>
+          <span class="error" id="cMessageError"></span>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Send message</button>
+      </form>
+    </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-text">
+    <h2>2026 Lesotho Tours. All rights reserved.</h2>
+      <p>Discover Lesotho with us. From Maletsunyane Falls to Sehlabathebe National Park and many more.</p>
+      <p>Contacts: 55765675 | Email: <a href="lesothotour@gmail.com">lesothotour@gmail.com</a></p>
+
+      <div class="footer-buttons">
+         <a href="index.html" class="button">Home</a>
+      </div> 
+    </div>
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="Lesotho Tours logo">
+      <p>ABOVE SEA LEVEL, BEYOND EXPECTATIONS.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
